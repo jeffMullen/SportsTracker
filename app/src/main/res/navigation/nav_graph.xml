@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/sportPicker">
+
+    <fragment
+        android:id="@+id/sportPicker"
+        android:name="com.android.sportstracker.ui.SportPicker"
+        android:label="sport_picker_fragment"
+        tools:layout="@layout/sport_picker_fragment" >
+        <action
+            android:id="@+id/action_sportPicker_to_teamPicker"
+            app:destination="@id/teamPicker" />
+    </fragment>
+    <fragment
+        android:id="@+id/teamPicker"
+        android:name="com.android.sportstracker.ui.TeamPicker"
+        android:label="team_picker_fragment"
+        tools:layout="@layout/team_picker_fragment" />
+</navigation>
