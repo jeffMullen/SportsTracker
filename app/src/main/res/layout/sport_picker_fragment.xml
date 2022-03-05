@@ -3,12 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.SportPicker"
-    android:background="@color/material_dynamic_secondary95">
+    tools:context=".ui.SportPicker">
 
-    <TextView
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/see_teams"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="SPORT PICKER FRAGMENT" />
+        android:layout_height="wrap_content"
+        android:text="See Teams"
+        android:layout_gravity="bottom"
+        />
 
 </FrameLayout>
