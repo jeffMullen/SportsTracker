@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".ui.MainActivity">
 
     <!--    Baseball Card   -->
@@ -117,7 +116,8 @@
         android:text="See Teams"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/rightEnd"
-        app:layout_constraintStart_toStartOf="@id/leftStart" />
+        app:layout_constraintStart_toStartOf="@id/leftStart"
+        android:layout_marginBottom="16dp"/>
 
     <!--    Constraint Guidelines for Sport Picking Cards   -->
     <!--    Left Side   -->
@@ -126,14 +126,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.10" />
+        app:layout_constraintGuide_percent="0.15" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/leftEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.40" />
+        app:layout_constraintGuide_percent="0.45" />
 
     <!--    Right Side  -->
     <androidx.constraintlayout.widget.Guideline
@@ -141,14 +141,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent=".60" />
+        app:layout_constraintGuide_percent=".55" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/rightEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent=".90" />
+        app:layout_constraintGuide_percent=".85" />
 
     <!--    Middle  -->
     <androidx.constraintlayout.widget.Guideline
