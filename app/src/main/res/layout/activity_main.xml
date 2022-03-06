@@ -70,8 +70,8 @@
     <!--    Basketball Card     -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/basketballCard"
-        android:layout_width="141dp"
-        android:layout_height="141dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/soccerCard"
         app:layout_constraintDimensionRatio="1:1"
@@ -126,14 +126,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.05" />
+        app:layout_constraintGuide_percent="0.10" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/leftEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.45" />
+        app:layout_constraintGuide_percent="0.40" />
 
     <!--    Right Side  -->
     <androidx.constraintlayout.widget.Guideline
@@ -141,14 +141,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent=".55" />
+        app:layout_constraintGuide_percent=".60" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/rightEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent=".95" />
+        app:layout_constraintGuide_percent=".90" />
 
     <!--    Middle  -->
     <androidx.constraintlayout.widget.Guideline
@@ -156,12 +156,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent=".3" />
+        app:layout_constraintGuide_percent=".35" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/middleEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent=".7" />
+        app:layout_constraintGuide_percent=".65" />
 </androidx.constraintlayout.widget.ConstraintLayout>
