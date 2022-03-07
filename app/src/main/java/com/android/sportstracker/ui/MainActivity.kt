@@ -24,12 +24,22 @@ class MainActivity : AppCompatActivity() {
         sportPickerViewModel = ViewModelProvider(this).get(SportPickerViewModel::class.java)
         setContentView(binding.root)
 
+        // Set the current sport when card is clicked
         binding.baseballCard.setOnClickListener { setSearchString(binding.baseballText) }
         binding.footballCard.setOnClickListener { setSearchString(binding.footballText) }
         binding.hockeyCard.setOnClickListener { setSearchString(binding.hockeyText) }
         binding.basketballCard.setOnClickListener { setSearchString(binding.basketballText) }
         binding.soccerCard.setOnClickListener { setSearchString(binding.soccerText) }
 
+        // Search for teams of the selected sport when button is clicked
+        binding.seeTeams.setOnClickListener {
+            searchTeams()
+        }
+
+    }
+
+    private fun searchTeams() {
+        TODO("Not yet implemented")
     }
 
     fun setSearchString(view: TextView) {

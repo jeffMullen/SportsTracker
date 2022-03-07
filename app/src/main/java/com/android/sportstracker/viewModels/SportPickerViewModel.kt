@@ -1,11 +1,29 @@
 package com.android.sportstracker.viewModels
 
 import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.android.sportstracker.network.SportsApi
+import com.android.sportstracker.network.Team
+import kotlinx.coroutines.launch
+
+enum class SportsApiStatus { LOADING, ERROR, DONE }
 
 class SportPickerViewModel : ViewModel() {
     // TODO: Implement the ViewModel
+    private val _status = MutableLiveData<SportsApiStatus>()
+    val status: LiveData<SportsApiStatus> = _status
+
+    private val _teams = MutableLiveData<List<Team>>()
+    val teams: LiveData<List<Team>> = _teams
+
     private lateinit var sportId: String
+
+    init {
+        getTeams()
+    }
 
     fun setSport(sport: String) {
 
@@ -33,6 +51,13 @@ class SportPickerViewModel : ViewModel() {
     override fun onCleared() {
         super.onCleared()
         Log.i("SPORTPICKER", "SportPickerViewModel onCleared()!!!!")
+    }
+
+    private fun getTeams() {
+        viewModelScope.launch {
+            _status.value = SportsApiStatus.LOADING
+
+        }
     }
 
 }
