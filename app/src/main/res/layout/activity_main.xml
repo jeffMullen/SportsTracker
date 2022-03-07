@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
+    <!--    LEFT COLUMN     -->
     <!--    Baseball Card   -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/baseballCard"
@@ -20,29 +21,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/baseball_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Baseball" />
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <!--    Football Card   -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/footballCard"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/basketballCard"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toEndOf="@id/rightEnd"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/rightStart"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Football" />
+            android:text="@string/baseball" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -60,9 +42,32 @@
         app:layout_constraintTop_toBottomOf="@+id/baseballCard">
 
         <TextView
+            android:id="@+id/hockey_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hockey" />
+            android:text="@string/hockey" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!--    RIGHT COLUMN    -->
+    <!--    Football Card   -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/footballCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/basketballCard"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/rightEnd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/rightStart"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/football_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/football" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -80,13 +85,14 @@
         app:layout_constraintTop_toBottomOf="@+id/footballCard">
 
         <TextView
+            android:id="@+id/basketball_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Basketball" />
+            android:text="@string/basketball" />
 
     </com.google.android.material.card.MaterialCardView>
 
-    <!--    Placed in the middle Constraint -->
+    <!--    Placed in the MIDDLE CONSTRAINT -->
     <!--    Soccer Card     -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/soccerCard"
@@ -101,9 +107,10 @@
         app:layout_constraintTop_toBottomOf="@+id/hockeyCard">
 
         <TextView
+            android:id="@+id/soccer_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Soccer" />
+            android:text="@string/soccer" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -113,11 +120,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:text="See Teams"
+        android:layout_marginBottom="16dp"
+        android:text="@string/see_teams"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/rightEnd"
-        app:layout_constraintStart_toStartOf="@id/leftStart"
-        android:layout_marginBottom="16dp"/>
+        app:layout_constraintStart_toStartOf="@id/leftStart" />
 
     <!--    Constraint Guidelines for Sport Picking Cards   -->
     <!--    Left Side   -->
@@ -164,4 +171,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent=".65" />
+
+
+    <androidx.fragment.app.FragmentContainerView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/overviewFragment"
+        android:name="com.android.sportstracker.ui.SportPicker"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/sport_picker_fragment" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

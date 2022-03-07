@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Sports Tracker</string>
+    <string name="baseball">Baseball</string>
+    <string name="football">Football</string>
+    <string name="basketball">Basketball</string>
+    <string name="hockey">Hockey</string>
+    <string name="soccer">Soccer</string>
+    <string name="see_teams">See Teams</string>
 </resources>
