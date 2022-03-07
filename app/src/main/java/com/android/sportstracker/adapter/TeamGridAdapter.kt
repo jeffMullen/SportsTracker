@@ -1,5 +1,6 @@
 package com.android.sportstracker.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
@@ -11,10 +12,12 @@ import com.android.sportstracker.network.Team
 class TeamGridAdapter :
     ListAdapter<Team, TeamGridAdapter.TeamViewHolder>(DiffCallback) {
 
+
         open class TeamViewHolder(
             private var binding: TeamPickerFragmentBinding
         ) : RecyclerView.ViewHolder(binding.root) {
             fun bind(team: Team) {
+                Log.i("TEAM VIEW HOLDER", "IN TEAM VIEW HOLDER")
                 binding.team = team
 
                 binding.executePendingBindings()
@@ -36,6 +39,7 @@ class TeamGridAdapter :
             parent: ViewGroup,
             viewType: Int
         ) : TeamViewHolder {
+            Log.i("ON CREATE TEAM VIEW", "IN TEAM VIEW HOLDER")
             return TeamViewHolder(
                 TeamPickerFragmentBinding.inflate(LayoutInflater.from(parent.context))
             )

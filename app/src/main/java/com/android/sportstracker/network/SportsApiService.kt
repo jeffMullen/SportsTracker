@@ -21,9 +21,10 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface SportsApiService {
+
     @GET("search_all_teams.php?l=")
 
-    suspend fun getTeams(): List<Team>
+    suspend fun getTeams(@Query("l") sportQuery: String): List<Team>
 }
 
 object SportsApi {

@@ -34,7 +34,8 @@ class MainActivity : AppCompatActivity() {
 
         // Search for teams of the selected sport when button is clicked
         binding.seeTeams.setOnClickListener {
-//            new SportsApiService()
+            Log.i("MAIN ACTIVITY", "BEFORE VIEW MODEL")
+            sportPickerViewModel.searchTeams()
         }
     }
 
