@@ -8,6 +8,7 @@ import androidx.lifecycle.LifecycleRegistry
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
 import com.android.sportstracker.databinding.ActivityMainBinding
+import com.android.sportstracker.network.SportsApiService
 import com.android.sportstracker.viewModels.SportPickerViewModel
 
 
@@ -33,10 +34,11 @@ class MainActivity : AppCompatActivity() {
 
         // Search for teams of the selected sport when button is clicked
         binding.seeTeams.setOnClickListener {
-//            SportPickerViewModel.searchTeams()
+            Log.i("MAIN ACTIVITY", "BEFORE VIEW MODEL")
+            sportPickerViewModel.searchTeams()
         }
-
     }
+
 
     fun setSearchString(view: TextView) {
         val sport = view.text

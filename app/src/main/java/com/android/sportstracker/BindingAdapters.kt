@@ -1,5 +1,6 @@
 package com.android.sportstracker
 
+import android.util.Log
 import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
@@ -22,6 +23,7 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
 
 @BindingAdapter("listData")
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<Team>?) {
+    Log.i("BINDING ADAPTER", "IN BINDING ADAPTER")
     val adapter = recyclerView.adapter as TeamGridAdapter
     adapter.submitList(data)
 }

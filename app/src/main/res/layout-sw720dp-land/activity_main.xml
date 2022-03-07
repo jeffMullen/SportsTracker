@@ -19,7 +19,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/leftStart"
         app:layout_constraintTop_toTopOf="parent"
-        style="@style/Widget.SportsTracker.CardView"
        >
 
         <LinearLayout
@@ -60,8 +59,7 @@
         app:layout_constraintEnd_toEndOf="@id/leftEnd"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/leftStart"
-        app:layout_constraintTop_toBottomOf="@+id/baseballCard"
-        style="@style/Widget.SportsTracker.CardView">
+        app:layout_constraintTop_toBottomOf="@+id/baseballCard">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -97,8 +95,7 @@
         app:layout_constraintEnd_toEndOf="@id/rightEnd"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/rightStart"
-        app:layout_constraintTop_toTopOf="parent"
-        style="@style/Widget.SportsTracker.CardView">
+        app:layout_constraintTop_toTopOf="parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -134,8 +131,7 @@
         app:layout_constraintEnd_toEndOf="@id/rightEnd"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/rightStart"
-        app:layout_constraintTop_toBottomOf="@+id/footballCard"
-        style="@style/Widget.SportsTracker.CardView">
+        app:layout_constraintTop_toBottomOf="@+id/footballCard">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -171,8 +167,7 @@
         app:layout_constraintEnd_toEndOf="@id/middleEnd"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/middleStart"
-        app:layout_constraintTop_toBottomOf="@+id/hockeyCard"
-        style="@style/Widget.SportsTracker.CardView">
+        app:layout_constraintTop_toBottomOf="@+id/hockeyCard">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -256,13 +251,13 @@
         app:layout_constraintGuide_percent=".65" />
 
 
-    <androidx.fragment.app.FragmentContainerView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/overviewFragment"
-        android:name="com.android.sportstracker.ui.SportPicker"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout="@layout/sport_picker_fragment" />
+<!--    <androidx.fragment.app.FragmentContainerView-->
+<!--        xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--        xmlns:tools="http://schemas.android.com/tools"-->
+<!--        android:id="@+id/overviewFragment"-->
+<!--        android:name="com.android.sportstracker.ui.SportPicker"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        tools:layout="@layout/sport_picker_fragment" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
