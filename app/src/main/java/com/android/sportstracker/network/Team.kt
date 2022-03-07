@@ -4,5 +4,6 @@ import com.squareup.moshi.Json
 
 data class Team (
         val id: String,
-        @Json(name = "team_name") val teamName: String
+        @Json(name = "strTeam") val strTeam: String,
+        @Json(name = "strTeamLogo") val strTeamLogo: String
         )

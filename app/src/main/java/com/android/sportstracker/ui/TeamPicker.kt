@@ -6,28 +6,30 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.android.sportstracker.R
+import com.android.sportstracker.adapter.TeamGridAdapter
+import com.android.sportstracker.databinding.ActivityMainBinding
+import com.android.sportstracker.databinding.TeamPickerFragmentBinding
+import com.android.sportstracker.viewModels.SportPickerViewModel
 import com.android.sportstracker.viewModels.TeamPickerViewModel
 
 class TeamPicker : Fragment() {
 
-    companion object {
-        fun newInstance() = TeamPicker()
-    }
-
-    private lateinit var viewModel: TeamPickerViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.team_picker_fragment, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(TeamPickerViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
-
+//    binding.root private val viewModel: SportPickerViewModel by viewModels()
+////
+////    override fun onCreateView(
+////        inflater: LayoutInflater, container: ViewGroup?,
+////        savedInstanceState: Bundle?
+////    ): View? {
+////        val binding = ActivityMainBinding.inflate(inflater)
+////
+////        binding.lifecycleOwner = this
+////
+////        binding.viewModel = viewModel
+////
+////        binding.teamsGrid.adapter = TeamGridAdapter()
+////
+////        return
+//    }
 }

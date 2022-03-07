@@ -1,173 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".ui.MainActivity">
+    >
 
-    <!--    Left Column Cards   -->
-    <!--    Baseball Card   -->
-<!--    <com.google.android.material.card.MaterialCardView-->
-<!--        android:id="@+id/baseballCard"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_marginTop="4dp"-->
-<!--        android:scaleType="centerCrop"-->
-<!--        app:layout_constraintBottom_toTopOf="@id/hockeyCard"-->
-<!--        app:layout_constraintDimensionRatio="1:1"-->
-<!--        app:layout_constraintEnd_toEndOf="@id/leftEnd"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintStart_toStartOf="@id/leftStart"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
+    <data>
+        <variable
+            name="viewModel"
+            type="com.android.sportstracker.viewModels.SportPickerViewModel" />
+    </data>
 
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Baseball" />-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.android.sportstracker.ui.MainActivity">
 
-<!--    </com.google.android.material.card.MaterialCardView>-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/teams_grid"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:padding="6dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:listData="@{viewModel.teams}"
+            app:spanCount="2"
+            tools:itemCount="16"
+            tools:listitem="@layout/team_picker_fragment" />
 
-<!--    &lt;!&ndash;    Hockey Card     &ndash;&gt;-->
-<!--    <com.google.android.material.card.MaterialCardView-->
-<!--        android:id="@+id/hockeyCard"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:scaleType="centerCrop"-->
-<!--        app:layout_constraintBottom_toTopOf="@id/soccerCard"-->
-<!--        app:layout_constraintDimensionRatio="1:1"-->
-<!--        app:layout_constraintEnd_toEndOf="@id/leftEnd"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintStart_toStartOf="@id/leftStart"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/baseballCard">-->
-
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Hockey" />-->
-
-<!--    </com.google.android.material.card.MaterialCardView>-->
-
-<!--    &lt;!&ndash;    Right Column Cards      &ndash;&gt;-->
-<!--    &lt;!&ndash;    Football Card   &ndash;&gt;-->
-<!--    <com.google.android.material.card.MaterialCardView-->
-<!--        android:id="@+id/footballCard"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:scaleType="centerCrop"-->
-<!--        app:layout_constraintBottom_toTopOf="@id/basketballCard"-->
-<!--        app:layout_constraintDimensionRatio="1:1"-->
-<!--        app:layout_constraintEnd_toEndOf="@id/rightEnd"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintStart_toStartOf="@id/rightStart"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
-
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Football" />-->
-
-<!--    </com.google.android.material.card.MaterialCardView>-->
-
-<!--    &lt;!&ndash;    Basketball Card     &ndash;&gt;-->
-<!--    <com.google.android.material.card.MaterialCardView-->
-<!--        android:id="@+id/basketballCard"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:scaleType="centerCrop"-->
-<!--        app:layout_constraintBottom_toTopOf="@id/soccerCard"-->
-<!--        app:layout_constraintDimensionRatio="1:1"-->
-<!--        app:layout_constraintEnd_toEndOf="@id/rightEnd"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toStartOf="@id/rightStart"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/footballCard">-->
-
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Basketball" />-->
-
-<!--    </com.google.android.material.card.MaterialCardView>-->
-
-<!--    &lt;!&ndash;    Placed in the middle Constraint &ndash;&gt;-->
-<!--    &lt;!&ndash;    Soccer Card     &ndash;&gt;-->
-<!--    <com.google.android.material.card.MaterialCardView-->
-<!--        android:id="@+id/soccerCard"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:scaleType="centerCrop"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintDimensionRatio="1:1"-->
-<!--        app:layout_constraintEnd_toEndOf="@id/middleEnd"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintStart_toStartOf="@id/middleStart"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/hockeyCard">-->
-
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Soccer" />-->
-
-<!--    </com.google.android.material.card.MaterialCardView>-->
-
-<!--    &lt;!&ndash;    See Teams Button     &ndash;&gt;-->
-<!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:id="@+id/see_teams"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="bottom"-->
-<!--        android:text="See Teams"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="@id/rightEnd"-->
-<!--        app:layout_constraintStart_toStartOf="@id/leftStart" />-->
-
-<!--    &lt;!&ndash;    ***********************************************     &ndash;&gt;-->
-<!--    &lt;!&ndash;    Constraint Guidelines for Sport Picking Cards   &ndash;&gt;-->
-<!--    &lt;!&ndash;    Left Side   &ndash;&gt;-->
-<!--    <androidx.constraintlayout.widget.Guideline-->
-<!--        android:id="@+id/leftStart"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        app:layout_constraintGuide_percent="0.05" />-->
-
-<!--    <androidx.constraintlayout.widget.Guideline-->
-<!--        android:id="@+id/leftEnd"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        app:layout_constraintGuide_percent="0.45" />-->
-
-<!--    &lt;!&ndash;    Right Side  &ndash;&gt;-->
-<!--    <androidx.constraintlayout.widget.Guideline-->
-<!--        android:id="@+id/rightStart"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        app:layout_constraintGuide_percent=".55" />-->
-
-<!--    <androidx.constraintlayout.widget.Guideline-->
-<!--        android:id="@+id/rightEnd"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        app:layout_constraintGuide_percent=".95" />-->
-
-<!--    &lt;!&ndash;    Middle  &ndash;&gt;-->
-<!--    <androidx.constraintlayout.widget.Guideline-->
-<!--        android:id="@+id/middleStart"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        app:layout_constraintGuide_percent=".30" />-->
-
-<!--    <androidx.constraintlayout.widget.Guideline-->
-<!--        android:id="@+id/middleEnd"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:orientation="vertical"-->
-<!--        app:layout_constraintGuide_percent="0.70"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -171,4 +171,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent=".65" />
+
+
+    <androidx.fragment.app.FragmentContainerView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/overviewFragment"
+        android:name="com.android.sportstracker.ui.SportPicker"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/sport_picker_fragment" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

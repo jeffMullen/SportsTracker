@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.TeamPicker"
-    android:background="@color/black">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="TEAM PICKER FRAGMENT" />
-
-</FrameLayout>
+    <data>
+        <variable
+            name="team"
+            type="com.android.sportstracker.network.Team" />
+    </data>
+    <ImageView
+        android:id="@+id/team_image"
+        android:layout_width="wrap_content"
+        android:layout_height="170dp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:padding="2dp"
+        app:imageUrl="@{team.strTeamLogo}"
+        tools:src="@tools:sample/backgrounds/scenic"/>
+</layout>

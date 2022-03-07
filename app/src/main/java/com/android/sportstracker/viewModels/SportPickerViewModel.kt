@@ -53,10 +53,20 @@ class SportPickerViewModel : ViewModel() {
         Log.i("SPORTPICKER", "SportPickerViewModel onCleared()!!!!")
     }
 
+    fun searchTeams() {
+        getTeams()
+    }
+
     private fun getTeams() {
         viewModelScope.launch {
             _status.value = SportsApiStatus.LOADING
-
+            try {
+                _teams.value = SportsApi.retrofitService.getTeams()
+                _status.value = SportsApiStatus.DONE
+            } catch (e: Exception) {
+                _status.value = SportsApiStatus.ERROR
+                _teams.value = listOf()
+            }
         }
     }
 

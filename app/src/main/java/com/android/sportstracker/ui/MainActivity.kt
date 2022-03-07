@@ -33,13 +33,9 @@ class MainActivity : AppCompatActivity() {
 
         // Search for teams of the selected sport when button is clicked
         binding.seeTeams.setOnClickListener {
-            searchTeams()
+//            SportPickerViewModel.searchTeams()
         }
 
-    }
-
-    private fun searchTeams() {
-        TODO("Not yet implemented")
     }
 
     fun setSearchString(view: TextView) {
