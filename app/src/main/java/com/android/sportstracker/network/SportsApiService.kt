@@ -5,6 +5,8 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.Call
+import retrofit2.http.Query
 
 private const val BASE_URL =
     "https://www.thesportsdb.com/api/v1/json/50130162/"
@@ -19,7 +21,8 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface SportsApiService {
-    @GET("search_all_teams.php?")
+    @GET("search_all_teams.php?l=")
+
     suspend fun getTeams(): List<Team>
 }
 
